@@ -6,7 +6,7 @@ app.secret_key = 'your-secret-key-here-change-in-production'
 @app.route('/')
 @app.route('/resume')
 def resume():
-    """Головна сторінка з резюме"""
+    """Головна сторінка резюме"""
     page_title = "Моє Резюме"
     return render_template('resume.html', title=page_title)
 
