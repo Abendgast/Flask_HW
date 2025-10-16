@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('resume') }}">
+            <i class="bi bi-person-circle"></i> Моє Портфоліо
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'resume' %}active{% endif %}" 
+                       href="{{ url_for('resume') }}">
+                        <i class="bi bi-file-person"></i> Резюме
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'contacts' %}active{% endif %}" 
+                       href="{{ url_for('contacts') }}">
+                        <i class="bi bi-envelope"></i> Контакти
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
