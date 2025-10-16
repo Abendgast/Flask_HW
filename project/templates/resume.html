@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    
+    <section class="text-center mb-5">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" 
+             alt="Моє фото" 
+             class="profile-photo mb-3">
+        <h1 class="display-4">Serhii Prylepskyi</h1>
+        <p class="lead text-muted">Full Stack Web Developer</p>
+    </section>
+
+    <section id="about" class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <i class="bi bi-person-fill text-primary"></i> Про себе
+                </h2>
+                <hr>
+                <p class="card-text">
+                    Я захоплений веб-розробник з понад 3 роками досвіду у створенні сучасних 
+                    веб-додатків. Спеціалізуюся на Python, Flask, Django та фронтенд-технологіях. 
+                    Завжди прагну вчитися новому та вдосконалювати свої навички.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <i class="bi bi-mortarboard-fill text-primary"></i> Освіта
+                </h2>
+                <hr>
+                <div class="education-item">
+                    <h5>Прикарпатський національний університет імені Василя Стефаника</h5>
+                    <p class="text-muted">Бакалавр з Комп'ютерних наук | 2019 - 2023</p>
+                    <p>Спеціалізація: Розробка програмного забезпечення</p>
+                </div>
+                <div class="education-item mt-3">
+                    <h5>Прикарпатський національний університет імені Василя Стефаника</h5>
+                    <p class="text-muted">Магістр з Комп'ютерних наук | 2023 - 2025</p>
+                    <p>Спеціалізація: Веб-технології та інженерія програмного забезпечення</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <i class="bi bi-lightning-fill text-primary"></i> Навички
+                </h2>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Веб-розробка</h5>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%">Python/Flask</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%">HTML/CSS</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%">JavaScript</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5>Інші навички</h5>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%">Git/GitHub</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%">SQL/PostgreSQL</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%">Docker</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technologies" class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <i class="bi bi-code-square text-primary"></i> Технології
+                </h2>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-filetype-py fs-1 text-primary"></i>
+                            <p class="mt-2 mb-0">Python</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-filetype-html fs-1 text-danger"></i>
+                            <p class="mt-2 mb-0">HTML5</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-filetype-css fs-1 text-info"></i>
+                            <p class="mt-2 mb-0">CSS3</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-filetype-js fs-1 text-warning"></i>
+                            <p class="mt-2 mb-0">JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-bootstrap fs-1 text-primary"></i>
+                            <p class="mt-2 mb-0">Bootstrap</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-git fs-1 text-danger"></i>
+                            <p class="mt-2 mb-0">Git</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-github fs-1"></i>
+                            <p class="mt-2 mb-0">GitHub</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="tech-badge">
+                            <i class="bi bi-database fs-1 text-success"></i>
+                            <p class="mt-2 mb-0">PostgreSQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <i class="bi bi-briefcase-fill text-primary"></i> Досвід роботи та Проекти
+                </h2>
+                <hr>
+                
+                <div class="experience-item mb-4">
+                    <h5>Junior Full Stack Developer</h5>
+                    <p class="text-muted">
+                        <i class="bi bi-building"></i> Tech Solutions Ltd | 
+                        <i class="bi bi-calendar-event"></i> 2023 - теперішній час
+                    </p>
+                    <ul>
+                        <li>Розробка та підтримка веб-додатків на Flask та Django</li>
+                        <li>Створення RESTful API для мобільних додатків</li>
+                        <li>Оптимізація продуктivності бази даних</li>
+                        <li>Участь у code review та менторинг молодших розробників</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item mb-4">
+                    <h5>Проект: Система управління задачами</h5>
+                    <p class="text-muted">
+                        <i class="bi bi-calendar-event"></i> 2023
+                    </p>
+                    <p>
+                        Розробив повнофункціональну систему управління проектами з можливістю 
+                        створення задач, призначення виконавців, відстеження прогресу. 
+                        Використані технології: Flask, PostgreSQL, Bootstrap, JavaScript.
+                    </p>
+                    <div class="project-tags">
+                        <span class="badge bg-primary me-2">Flask</span>
+                        <span class="badge bg-secondary me-2">PostgreSQL</span>
+                        <span class="badge bg-info">Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h5>Проект: Блог-платформа</h5>
+                    <p class="text-muted">
+                        <i class="bi bi-calendar-event"></i> 2022
+                    </p>
+                    <p>
+                        Створив блог-платформу з системою аутентифікації, можливістю публікації 
+                        статей, коментування та пошуку. Реалізовано адміністративну панель.
+                    </p>
+                    <div class="project-tags">
+                        <span class="badge bg-primary me-2">Python</span>
+                        <span class="badge bg-secondary me-2">Flask</span>
+                        <span class="badge bg-success">SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
