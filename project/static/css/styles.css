@@ -1,0 +1,376 @@
+/* ===========================
+   Загальні стилі
+   =========================== */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+main {
+    min-height: calc(100vh - 200px);
+}
+
+/* ===========================
+   Навігація
+   =========================== */
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+/* ===========================
+   Профіль фото
+   =========================== */
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   Картки (Cards)
+   =========================== */
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.card-title {
+    color: var(--dark-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   Навички (Skills)
+   =========================== */
+
+.skill-bar {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 35px;
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, var(--primary-color), #0a58ca);
+    color: white;
+    padding: 8px 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: width 1s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* ===========================
+   Технології
+   =========================== */
+
+.tech-badge {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-badge:hover {
+    background-color: var(--light-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tech-badge i {
+    transition: transform 0.3s ease;
+}
+
+.tech-badge:hover i {
+    transform: scale(1.2);
+}
+
+/* ===========================
+   Досвід роботи
+   =========================== */
+
+.experience-item {
+    padding-left: 20px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.experience-item h5 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-tags .badge {
+    font-size: 0.9rem;
+    padding: 5px 12px;
+}
+
+/* ===========================
+   Освіта
+   =========================== */
+
+.education-item {
+    position: relative;
+    padding-left: 20px;
+}
+
+.education-item::before {
+    content: "🎓";
+    position: absolute;
+    left: -10px;
+    font-size: 1.5rem;
+}
+
+/* ===========================
+   Контакти
+   =========================== */
+
+.contact-info-item {
+    padding: 10px 0;
+}
+
+.contact-info-item h5 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.social-links-large a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links-large a:hover {
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   Форма
+   =========================== */
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #0a58ca);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0a58ca, var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* ===========================
+   Футер
+   =========================== */
+
+footer {
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+footer .social-links a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer .social-links a:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* ===========================
+   Alerts
+   =========================== */
+
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* ===========================
+   Адаптивність (Mobile)
+   =========================== */
+
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    h1.display-4 {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .skill-bar {
+        height: 30px;
+    }
+    
+    .skill-progress {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .tech-badge {
+        padding: 15px 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    h1.display-4 {
+        font-size: 1.75rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .social-links-large .btn {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+}
+
+/* ===========================
+   Анімації
+   =========================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease;
+}
+
+/* ===========================
+   Скролл
+   =========================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===========================
+   Кастомний скролбар
+   =========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0a58ca;
+}
