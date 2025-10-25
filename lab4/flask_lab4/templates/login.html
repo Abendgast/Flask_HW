@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Вхід - Flask Lab 4{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+                <h4 class="mb-0">Вхід в систему</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Ім'я користувача</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="username" 
+                               name="username" 
+                               placeholder="Введіть ім'я користувача"
+                               required 
+                               autofocus>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Пароль</label>
+                        <input type="password" 
+                               class="form-control" 
+                               id="password" 
+                               name="password" 
+                               placeholder="Введіть пароль"
+                               required>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Увійти
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center text-muted">
+                <small>Використовуйте тестові облікові записи з головної сторінки</small>
+            </div>
+        </div>
+
+        <!-- Довідка з тестовими обліковими записами -->
+        <div class="card mt-3">
+            <div class="card-body">
+                <h6 class="card-title">Тестові облікові записи:</h6>
+                <ul class="list-unstyled mb-0">
+                    <li><strong>admin</strong> / password123</li>
+                    <li><strong>user</strong> / qwerty</li>
+                    <li><strong>test</strong> / test123</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
