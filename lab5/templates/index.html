@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Головна - Flask Lab 5{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="text-center">
+            <h1 class="display-4 mb-4">Лабораторна робота №5</h1>
+            <p class="lead">WTF-форми у Flask</p>
+            
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="card-title">Реалізований функціонал:</h5>
+                    <ul class="list-group list-group-flush text-start">
+                        <li class="list-group-item">
+                            <strong>✓</strong> Контактна форма з WTF валідацією
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Форма входу з WTF валідацією
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> CSRF захист для всіх форм
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Макроси для відображення полів форм
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Логування даних форм (loguru)
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Post/Redirect/Get pattern
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Flash-повідомлення з категоріями
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Відображення даних форм у таблиці
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3">
+                    📧 Контактна форма
+                </a>
+                {% if not session.username %}
+                <a href="{{ url_for('login') }}" class="btn btn-success btn-lg">
+                    🔐 Увійти в систему
+                </a>
+                {% else %}
+                <a href="{{ url_for('profile') }}" class="btn btn-info btn-lg">
+                    👤 Мій профіль
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="card mt-5 text-start">
+                <div class="card-header bg-info text-white">
+                    <h6 class="mb-0">Тестові облікові записи</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Логін</th>
+                                <th>Пароль</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>admin</code></td>
+                                <td><code>password123</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>user</code></td>
+                                <td><code>qwerty</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>test</code></td>
+                                <td><code>test123</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
