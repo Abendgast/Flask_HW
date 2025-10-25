@@ -68,12 +68,6 @@ def contact():
         # Post/Redirect/Get pattern
         return redirect(url_for('contact'))
     
-    # Якщо форма не валідна, виводимо помилки
-    if form.errors:
-        for field, errors in form.errors.items():
-            for error in errors:
-                flash(f'Помилка в полі {field}: {error}', 'error')
-    
     return render_template('contact.html', form=form, submissions=contact_submissions)
 
 
@@ -110,12 +104,6 @@ def login():
             flash('Невірне ім\'я користувача або пароль', 'error')
             # Post/Redirect/Get pattern
             return redirect(url_for('login'))
-    
-    # Якщо форма не валідна, виводимо помилки
-    if form.errors:
-        for field, errors in form.errors.items():
-            for error in errors:
-                flash(f'Помилка в полі {getattr(form, field).label.text}: {error}', 'error')
     
     return render_template('login.html', form=form, login_attempts=login_attempts)
 
