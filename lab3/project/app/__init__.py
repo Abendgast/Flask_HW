@@ -6,3 +6,5 @@ from app.users import users_bp
 app.register_blueprint(users_bp)
 
 from app import views
+from app.products import products_bp
+app.register_blueprint(products_bp)

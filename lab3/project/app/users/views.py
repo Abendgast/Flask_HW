@@ -1,5 +1,5 @@
 from app.users import users_bp
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 
 @users_bp.route('/hi/<name>')
 def greetings(name):
