@@ -1,0 +1,120 @@
+/* Загальні стилі */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+/* Анімації для flash повідомлень */
+.alert {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Стилі для карток */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для форм */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Стилі для кнопок */
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для навігації */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для таблиці */
+.table {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btn-group .btn {
+        border-radius: 0.375rem !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Темна тема - додаткові стилі */
+.theme-dark .btn-outline-primary {
+    color: #6ea8fe;
+    border-color: #6ea8fe;
+}
+
+.theme-dark .btn-outline-primary:hover {
+    background-color: #6ea8fe;
+    color: #000;
+}
+
+.theme-dark .btn-outline-secondary {
+    color: #adb5bd;
+    border-color: #6c757d;
+}
+
+.theme-dark .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.theme-dark footer {
+    background-color: #2d2d2d !important;
+    color: #adb5bd !important;
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
