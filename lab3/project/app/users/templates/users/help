@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Привітання{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav class="sidebar">
+        <ul>
+            <li><a href="{{ url_for('users.greetings', name='John') }}">John</a></li>
+            <li><a href="{{ url_for('users.greetings', name='Alice') }}">Alice</a></li>
+            <li><a href="{{ url_for('users.admin') }}">Admin</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>Привіт, {{ name }}!</h1>
+        <p>Вік: {{ age }}</p>
+    </main>
+</div>
+{% endblock %}
