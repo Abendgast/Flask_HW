@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Головна - Flask Lab 4{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="text-center">
+            <h1 class="display-4 mb-4">Лабораторна робота №4</h1>
+            <p class="lead">Об'єкт запиту request. Сесії та кукі.</p>
+            
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="card-title">Реалізований функціонал:</h5>
+                    <ul class="list-group list-group-flush text-start">
+                        <li class="list-group-item">
+                            <strong>✓</strong> Система автентифікації з використанням сесій
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Flash-повідомлення з категоріями
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Управління кукі (додавання, видалення)
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Вибір кольорової схеми (світла/темна)
+                        </li>
+                        <li class="list-group-item">
+                            <strong>✓</strong> Навігаційне меню з Bootstrap
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                {% if not session.username %}
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">
+                    Увійти в систему
+                </a>
+                {% else %}
+                <a href="{{ url_for('profile') }}" class="btn btn-success btn-lg">
+                    Перейти до профілю
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="card mt-5 text-start">
+                <div class="card-header bg-info text-white">
+                    <h6 class="mb-0">Тестові облікові записи</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Логін</th>
+                                <th>Пароль</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>admin</code></td>
+                                <td><code>password123</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>user</code></td>
+                                <td><code>qwerty</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>test</code></td>
+                                <td><code>test123</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
