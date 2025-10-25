@@ -9,7 +9,6 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <!-- Навігаційне меню -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('index') }}">Flask Lab 5</a>
@@ -50,7 +49,6 @@
         </div>
     </nav>
 
-    <!-- Flash повідомлення -->
     <div class="container mt-3">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -64,12 +62,10 @@
         {% endwith %}
     </div>
 
-    <!-- Основний контент -->
     <main class="container my-4">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Футер -->
     <footer class="bg-light text-center text-muted py-3 mt-5">
         <div class="container">
             <p>&copy; 2025 Flask Lab 5. Лабораторна робота №5 - WTF-форми</p>
@@ -81,34 +77,24 @@
 </body>
 </html>
 
-<!-- Макрос для відображення поля форми -->
 {% macro render_field(field) %}
 <div class="mb-3">
     {{ field.label(class="form-label") }}
-    
     {% if field.type == 'BooleanField' %}
         <div class="form-check">
             {{ field(class="form-check-input") }}
-            <label class="form-check-label" for="{{ field.id }}">
-                {{ field.label.text }}
-            </label>
         </div>
     {% elif field.type == 'TextAreaField' %}
         {{ field(class="form-control" + (" is-invalid" if field.errors else ""), rows=5) }}
     {% else %}
         {{ field(class="form-control" + (" is-invalid" if field.errors else "")) }}
     {% endif %}
-    
     {% if field.errors %}
         <div class="invalid-feedback d-block">
             {% for error in field.errors %}
                 <div>{{ error }}</div>
             {% endfor %}
         </div>
-    {% endif %}
-    
-    {% if field.description %}
-        <small class="form-text text-muted">{{ field.description }}</small>
     {% endif %}
 </div>
 {% endmacro %}
