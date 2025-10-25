@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Профіль - {{ username }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <!-- Привітання -->
+        <div class="card mb-4 shadow">
+            <div class="card-body text-center">
+                <h2>Вітаємо, {{ username }}! 👋</h2>
+                <p class="text-muted">Ви успішно увійшли в систему</p>
+                {% if remember %}
+                <p class="text-success">
+                    <strong>✓ Вас запам'ятано в системі</strong>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Інформація про користувача -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">👤 Інформація про профіль</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless mb-0">
+                    <tbody>
+                        <tr>
+                            <th width="30%">Ім'я користувача:</th>
+                            <td><strong>{{ username }}</strong></td>
+                        </tr>
+                        <tr>
+                            <th>Статус сесії:</th>
+                            <td><span class="badge bg-success">Активна</span></td>
+                        </tr>
+                        <tr>
+                            <th>Запам'ятати:</th>
+                            <td>
+                                {% if remember %}
+                                <span class="badge bg-success">Так</span>
+                                {% else %}
+                                <span class="badge bg-secondary">Ні</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Доступні дії -->
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">⚡ Доступні дії</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">
+                        📧 Відправити контактне повідомлення
+                    </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                        🏠 На головну сторінку
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка виходу -->
+        <div class="text-center">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger btn-lg">
+                🚪 Вийти з системи
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
