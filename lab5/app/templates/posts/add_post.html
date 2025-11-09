@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% from 'macros/form_macros.html' import render_field %}
+{% block title %}Add / Edit Post{% endblock %}
+{% block content %}
+  <h2>{{ 'Edit' if post else 'Add' }} Post</h2>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ render_field(form.title) }}
+    {{ render_field(form.content) }}
+    {{ render_field(form.category) }}
+    {{ render_field(form.enabled) }}
+    {{ render_field(form.publish_date) }}
+    <button class="btn btn-success" type="submit">{{ form.submit.label.text }}</button>
+    <a href="{{ url_for('posts.list_posts') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}
+
