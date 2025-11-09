@@ -1,7 +1,9 @@
-/.venv
+.venv/
 __pycache__/
 *.pyc
+*.pyo
+*.db
+migrations/
 instance/
-migrations/versions/*.pyc
 .env
-
+.DS_Store
