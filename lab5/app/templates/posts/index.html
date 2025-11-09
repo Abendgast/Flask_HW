@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Posts</h1>
+{% for post in posts %}
+  <div>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <small>{{ post.created_at }}</small>
+    <form action="{{ url_for('posts.delete', post_id=post.id) }}" method="post">
+      <a href="{{ url_for('posts.edit', post_id=post.id) }}">Edit</a>
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+{% else %}
+  <p>No posts yet.</p>
+{% endfor %}
+{% endblock %}
+
