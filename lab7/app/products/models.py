@@ -1,7 +1,8 @@
 from app import db
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import Integer, String, Float, ForeignKey, Boolean
+from sqlalchemy import Integer, String, Float, ForeignKey, Boolean, DateTime, func
 from typing import List
+from datetime import datetime
 
 
 class Category(db.Model):
@@ -24,6 +25,11 @@ class Product(db.Model):
     price: Mapped[float] = mapped_column(Float, nullable=False)
     category_id: Mapped[int] = mapped_column(ForeignKey('categories.id'), nullable=True)
     active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        nullable=False, 
+        server_default=func.now()
+    )
     
     category: Mapped["Category"] = relationship(back_populates="products")
     
