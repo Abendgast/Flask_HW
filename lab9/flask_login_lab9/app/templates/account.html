@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Account</h2>
+
+<div style="display:flex; gap:24px; align-items:flex-start;">
+  <div>
+    <!-- Показ основної картинки (якщо нема — profile_default.jpg) -->
+    <img src="{{ url_for('static', filename='profile_pics/' + (user.image or 'profile_default.jpg')) }}"
+         alt="Profile picture" style="width:200px;height:200px;object-fit:cover;border-radius:8px;">
+    <p><strong>{{ user.username }}</strong></p>
+    <p>{{ user.email }}</p>
+    <p>Last seen: {{ user.last_seen }}</p>
+  </div>
+
+  <div style="flex:1;">
+    <h3>Update profile</h3>
+    <form method="POST" enctype="multipart/form-data">
+      {{ upd_form.hidden_tag() }}
+      <div>
+        {{ upd_form.username.label }}<br>
+        {{ upd_form.username(size=32) }}
+        {% for err in upd_form.username.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ upd_form.email.label }}<br>
+        {{ upd_form.email(size=32) }}
+        {% for err in upd_form.email.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ upd_form.about_me.label }}<br>
+        {{ upd_form.about_me(rows=4, cols=50) }}
+        {% for err in upd_form.about_me.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ upd_form.picture.label }}<br>
+        {{ upd_form.picture() }}
+        {% for err in upd_form.picture.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ upd_form.submit() }}
+      </div>
+    </form>
+
+    <hr>
+
+    <h3>Change password</h3>
+    <form method="POST">
+      {{ pwd_form.hidden_tag() }}
+      <div>
+        {{ pwd_form.old_password.label }}<br>
+        {{ pwd_form.old_password() }}
+        {% for err in pwd_form.old_password.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ pwd_form.new_password.label }}<br>
+        {{ pwd_form.new_password() }}
+        {% for err in pwd_form.new_password.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ pwd_form.confirm.label }}<br>
+        {{ pwd_form.confirm() }}
+        {% for err in pwd_form.confirm.errors %}
+          <div style="color:red;">{{ err }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {{ pwd_form.submit() }}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

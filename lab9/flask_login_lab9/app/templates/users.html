@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Users</h2>
+
+{% if users %}
+<ul>
+    {% for u in users %}
+        <li>{{ u.id }} — {{ u.username }} — {{ u.email }}</li>
+    {% endfor %}
+</ul>
+<p>Total: {{ users|length }}</p>
+{% else %}
+<p>No users found.</p>
+{% endif %}
+
+{% endblock %}
+
